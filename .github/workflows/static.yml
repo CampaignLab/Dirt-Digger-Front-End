@@ -26,6 +26,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          - uses: actions/upload-pages-artifact@v3
+  with:
+    path: "Project Deep Dive"
       - id: deployment
         uses: actions/deploy-pages@v4
