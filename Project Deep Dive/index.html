@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Council Story Search</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Council Story Search</h1>
+      <p id="results-summary" class="summary" aria-live="polite">Loading stories...</p>
+    </div>
+  </header>
+
+  <main class="container" id="main-content">
+    <section class="filters" aria-label="Story filters">
+      <div class="filter-grid">
+        <div class="field">
+          <label for="name-filter">Search candidate name</label>
+          <input id="name-filter" type="text" autocomplete="off" placeholder="e.g. Andrew Baldwin">
+        </div>
+
+        <div class="field">
+          <label for="ward-filter">Search ward</label>
+          <input id="ward-filter" type="text" autocomplete="off" placeholder="e.g. Holbrook">
+        </div>
+
+        <div class="field">
+          <label for="council-filter">Search council</label>
+          <input id="council-filter" type="text" autocomplete="off" placeholder="e.g. West Sussex">
+        </div>
+
+        <div class="actions">
+          <button id="clear-filters" type="button">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="error-banner" class="banner banner-error" role="alert" hidden></section>
+
+    <section id="stories" class="stories" aria-label="Story results"></section>
+  </main>
+
+  <template id="story-card-template">
+    <article class="story-card">
+      <h2 class="story-title"></h2>
+      <p class="story-description"></p>
+      <dl class="story-meta">
+        <div><dt>Name</dt><dd class="meta-name"></dd></div>
+        <div><dt>Ward</dt><dd class="meta-ward"></dd></div>
+        <div><dt>Council</dt><dd class="meta-council"></dd></div>
+      </dl>
+      <p class="story-date"></p>
+      <p class="story-descriptor"></p>
+      <p class="story-source"></p>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
