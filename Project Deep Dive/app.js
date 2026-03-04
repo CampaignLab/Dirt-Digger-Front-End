@@ -44,7 +44,8 @@
     bindEvents();
 
     try {
-      const response = await fetch("data/stories.csv", { cache: "no-store" });
+      const csvUrl = new URL("data/stories.csv", document.baseURI);
+      const response = await fetch(csvUrl, { cache: "no-store" });
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -396,3 +397,4 @@
 
   init();
 })();
+
